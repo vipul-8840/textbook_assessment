@@ -5,8 +5,6 @@ const {userModel,courseModel} = require("./db");
 const mongoose =  require("mongoose")
 const jwt = require("jsonwebtoken")
 const cors = require ("cors");
-
-
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,7 +17,7 @@ mongoose.connect(process.env.URL, {
   .catch((err) => console.error("MongoDB connection error:", err));
 
 app.use(express.json()); 
-app.use(cors);
+app.use(cors());
 
 app.post("/signup", async(req, res) => 
 {
