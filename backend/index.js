@@ -4,6 +4,8 @@ const dotenv = require("dotenv");
 const {userModel,courseModel} = require("./db");
 const mongoose =  require("mongoose")
 const jwt = require("jsonwebtoken")
+const cors = require ("cors");
+
 
 dotenv.config();
 const app = express();
@@ -17,19 +19,12 @@ mongoose.connect(process.env.URL, {
   .catch((err) => console.error("MongoDB connection error:", err));
 
 app.use(express.json()); 
+app.use(cors);
 
 app.post("/signup", async(req, res) => 
 {
   try{
       const {email,username,password,} = req.body
-    
-    if(!email ||!password || !username)
-    {
-      return res.status(400).json({
-         mssg:"Email, password & username are required"
-      });
-    }
-  
     const hashedPassword = await bcrypt.hash(password,5);
    await  userModel.create({
       email,
@@ -56,11 +51,11 @@ app.post("/signin", async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    if (!email || !password) {
-      return res.status(400).json({
-        msg: "Email & password are required",
-      });
-    }
+    // if (!email || !password) {
+    //   return res.status(400).json({
+    //     msg: "Email & password are required",
+    //   });
+    // }
 
    const user = await userModel.findOne({ email });
     if (!user) {
