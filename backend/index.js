@@ -98,7 +98,7 @@ app.get("/courses", async (req, res) => {
   }
 });
 
-app.get("/course/:id", async (req, res) => {
+app.get("/courses/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const course = await courseModel.findById(id);
@@ -110,10 +110,6 @@ app.get("/course/:id", async (req, res) => {
     res.status(500).json({ message: "Error fetching course", error: err.message });
   }
 });
-
-
-
-
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT} : http://localhost:5000`);

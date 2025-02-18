@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import Navbar from "../components/Nabar";
+
 
 const SignIn = () => {
   const emailRef = useRef(null);
@@ -45,61 +47,57 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-orange-100 to-green-200 relative">
-      {/* Link with Image */}
-      <Link to="/" className="absolute top-4 left-4">
-        <img
-          src="https://img.freepik.com/free-vector/vector-education-logo_779267-2059.jpg"
-          alt="Textbook"
-          className="w-20 h-20"
-        />
-      </Link>
+    <div className="min-h-screen bg-gradient-to-r from-orange-100 to-green-200">
+      
+      <Navbar />
 
-      <div className="w-full max-w-sm p-6 bg-white shadow-lg rounded-lg">
-        <h1 className="text-2xl font-bold text-center mb-4">Sign In</h1>
-        {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-        {success && <p className="text-green-500 text-sm mb-4">{success}</p>}
+      <div className="flex justify-center items-center min-h-[calc(100vh-64px)]">
+        <div className="w-full max-w-sm p-6 bg-white shadow-lg rounded-lg">
+          <h1 className="text-2xl font-bold text-center mb-4">Sign In</h1>
+          {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+          {success && <p className="text-green-500 text-sm mb-4">{success}</p>}
 
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-semibold mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              ref={emailRef}
-              required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-sm font-semibold mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                ref={emailRef}
+                required
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label htmlFor="password" className="block text-sm font-semibold mb-2">
+                Password
+              </label>
+              <input
+                type="password"
+                ref={passwordRef}
+                required
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              Sign In
+            </button>
+          </form>
+
+          <div className="mt-4 text-center">
+            <p className="text-sm">
+              Do not have an account?{" "}
+              <Link to="/signup" className="text-blue-500 hover:underline">
+                Sign up
+              </Link>
+            </p>
           </div>
-
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-sm font-semibold mb-2">
-              Password
-            </label>
-            <input
-              type="password"
-              ref={passwordRef}
-              required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Sign In
-          </button>
-        </form>
-
-        <div className="mt-4 text-center">
-          <p className="text-sm">
-            Do not have an account?{" "}
-            <Link to="/signup" className="text-blue-500 hover:underline">
-              Sign up
-            </Link>
-          </p>
         </div>
       </div>
     </div>
