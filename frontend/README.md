@@ -26,10 +26,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - `Signin.jsx`: Contains the implementation of the `SignIn` component which handles user login.
 - `Home.jsx`: Contains the implementation of the `Home` component which displays the homepage with a list of courses.
 
-```jsx
- ![Description](public/kvimg.png)
 
-  <img src={homeImage} alt="Description" className="w-full h-72 object-cover rounded-xl mb-6 border border-gray-300 shadow-md" />
+  ![Home Page](https://raw.githubusercontent.com/vipul-8840/textbook_assessment/main/frontend/public/kvimg.png)
+
 - `Dashboard.jsx`: Contains the implementation of the `Dashboard` component which displays the user dashboard.
 - `Course.jsx`: Contains the implementation of the `CourseDetails` component which displays detailed information about a specific course.
 
@@ -40,10 +39,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - `About.jsx`: Contains the implementation of the `About` component which provides information about the platform.
 If you are using local images, you can import them and use them in your components:
 
-jsx
-![Description](public/aboutimg.png)
+![Home Page](https://raw.githubusercontent.com/vipul-8840/textbook_assessment/main/frontend/public/aboutimg.png)
 
-<img src={aboutImage} alt="Description" className="w-full h-72 object-cover rounded-xl mb-6 border border-gray-300 shadow-md" />
+
 
 
 ## Learn More
