@@ -1,8 +1,8 @@
 # Textbook Assessment Project
 
 This project is a comprehensive learning platform built with a React frontend and a Node.js backend. It includes various pages and components to provide a seamless user experience.
-![Home Page](https://raw.githubusercontent.com/vipul-8840/textbook_assessment/main/frontend/assets/kvimg.png)
-![Home Page](https://raw.githubusercontent.com/vipul-8840/textbook_assessment/main/frontend/assets/aboutimg.png)
+![Home Page](https://raw.githubusercontent.com/vipul-8840/textbook_assessment/main/frontend/public/kvimg.png)
+![About Page](https://raw.githubusercontent.com/vipul-8840/textbook_assessment/main/frontend/public/aboutimg.png)
 
 ## Project Structure
 
