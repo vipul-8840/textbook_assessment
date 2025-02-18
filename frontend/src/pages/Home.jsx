@@ -1,4 +1,4 @@
-import About from "../components/About"
+
 import CourseList from "../components/Courselists"
 import Navbar from "../components/Nabar"
 
